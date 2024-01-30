@@ -1,0 +1,27 @@
+.credentials{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.field{
+    margin: 4px;
+    height: 30px;
+    width: 300px;
+}
+
+.submit{
+    height: 30px;
+    background-color: rgb(97, 125, 163);
+    border:none;
+    border-radius: 3px;
+    color: white;
+}
+
+.submit:hover{
+    background-color: rgb(77, 98, 129);
+}
+
+.submit:active{
+    background-color: rgb(97, 125, 163);
+}

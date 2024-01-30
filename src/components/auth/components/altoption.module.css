@@ -1,0 +1,23 @@
+.altOption{
+    background-color: rgb(50, 39, 116);
+    padding: 10px;
+    border-radius: 5px;
+    width: fit-content;
+    color: white;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+}
+
+.altOption:hover{
+    background-color: rgb(41, 32, 95);
+}
+.altOption:active{
+    background-color: rgb(50, 39, 116);
+}
+
+.icon{
+    margin: 4px;
+}

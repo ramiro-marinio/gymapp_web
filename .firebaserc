@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "better-training-6a48a"
+  },
+  "targets": {
+    "better-training-6a48a": {
+      "hosting": {
+        "trainguru": [
+          "trainguru"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

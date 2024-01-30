@@ -1,0 +1,37 @@
+.article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.link{
+    color: black;
+    text-decoration: none;
+}
+
+.source{
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.article:hover{
+    cursor: pointer;
+    background-color: rgba(230, 230, 230, 0.7);
+}
+
+.thumbnail{
+    border-radius: 25px;
+    background-image: url('no_thumbnail.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+    margin-top: 0;
+}
+
+.textContainer{
+    width: 70%;
+}

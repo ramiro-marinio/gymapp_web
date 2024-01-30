@@ -2,7 +2,9 @@ import React from 'react'
 
 function MyGyms() {
   return (
-    <div>MyGyms</div>
+    <div>
+      <h1 align='center'>My Gyms</h1>
+    </div>
   )
 }
 

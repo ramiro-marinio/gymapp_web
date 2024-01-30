@@ -1,0 +1,25 @@
+.userplate{
+    margin: 10px;
+    padding: 4px;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+    width: fit-content;
+}
+.userplate:hover{
+    background-color: rgba(255, 255, 255, 0.223);
+    cursor: pointer;
+}
+.userplate:active{
+    background-color: rgba(200, 200, 200, 0.223);
+}
+
+.title{
+    color:white;
+}
+.textdetails{
+    font-size: x-small;
+    color: white;
+}
