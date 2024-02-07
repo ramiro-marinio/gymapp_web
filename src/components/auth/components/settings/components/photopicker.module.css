@@ -1,0 +1,13 @@
+.photoPicker{
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.options{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

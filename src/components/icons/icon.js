@@ -1,9 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function Icon(props) {
+export function Icon(props) {
   return (
-    <span class="material-symbols-outlined">{props.name}</span>
+    <span style={{userSelect:'none'}} className="material-symbols-outlined notranslate">{props.name}</span>
   )
 }
 
-export default Icon
+Icon.propTypes = {
+  name:PropTypes.string
+}

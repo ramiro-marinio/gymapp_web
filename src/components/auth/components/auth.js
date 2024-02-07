@@ -3,8 +3,8 @@ import {auth,db} from '../../../firebase/initialize_firebase'
 import styles from './auth.module.css';
 import {useForm} from 'react-hook-form';
 import {signInWithEmailAndPassword,signInWithPopup,GoogleAuthProvider } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
-import GoogleOption from './altoption';
+import { useNavigate,Link } from 'react-router-dom';
+import GoogleOption from '../../general/altoption';
 function LogIn() {
     const navigate = useNavigate();
     const {register,handleSubmit} = useForm();
@@ -23,6 +23,7 @@ function LogIn() {
                         <input {...register('userName')} type='text' placeholder='User Name' className={styles.field}/>
                         <input {...register('password')} type='password' placeholder='Password' className={styles.field}/>
                         <input type='submit' value='Log In' className={styles.submit}/>
+                        <Link to={'/register'}>Don't have an account? Sign Up</Link>
                         <h2 align='center'>Or...</h2>
                         <GoogleOption onClick={async()=>{
                             try{

@@ -1,0 +1,4 @@
+.mygyms{
+    display: flex;
+    flex-direction: column;
+}

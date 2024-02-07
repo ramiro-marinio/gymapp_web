@@ -1,11 +1,11 @@
 .navlink{
-    margin: 30px;
     font-weight: lighter;
     text-align: center;
     color:white;
     padding:6px;
+    display: flex;
+    justify-content: space-around;
     justify-content: center;
-    border-radius: 10px;
     user-select: none;
 }
 .navlink:hover{

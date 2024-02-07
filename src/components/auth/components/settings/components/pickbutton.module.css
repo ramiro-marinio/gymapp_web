@@ -1,0 +1,30 @@
+input[type='file']{
+    display: none;
+}
+.fileLabel{
+    background-color: rgb(97, 125, 163);
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.fileLabel:hover{
+    background-color: rgb(89, 114, 149);
+    cursor: pointer;
+}
+.fileLabel:active{
+    background-color: rgb(97, 125, 163);
+}
+
+
+.label{
+    margin: 0;
+    display: flex;
+    white-space: nowrap;
+    flex-direction: row;
+}

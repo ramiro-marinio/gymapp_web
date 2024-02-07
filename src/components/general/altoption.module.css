@@ -1,0 +1,21 @@
+.altOption{
+    width: 200px;
+    height: 30px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: rgb(41, 72, 140);
+}
+
+.altOption:hover{
+    background-color: rgb(35, 61, 116);
+    cursor: pointer;
+}
+
+.altOption:active{
+    background-color: rgb(41, 72, 140);
+}

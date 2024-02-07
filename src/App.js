@@ -9,19 +9,37 @@ import LogIn from "./components/auth/components/auth";
 import Register from "./components/auth/components/register";
 import { useContext } from "react";
 import { FirebaseContext } from "./firebase/context";
+import { ProfileConfig } from "./components/auth/components/settings/profileconfig";
+import Overlay from "./components/general/dialog/overlay";
+import Dialog from "./components/general/dialog/dialog";
+import Button from "./components/general/button";
+import { DialogContext } from "./components/general/dialog/dialogcontext";
+import Drawer from "./components/general/drawer/drawer";
+import GymMenu from "./components/pages/my-gyms/components/gym/menu";
 function App() {
+  const dialogContext = useContext(DialogContext);
   return (
     <div className="App">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+      <Drawer/>
       <NavBar/>
       <Routes>
           <Route path='/' element={<HomePage/>}/>
+
+
           <Route path='/my-gyms' element={<MyGyms/>}/>
+          <Route path='/gym/:gym' /*loader={({params})=>{return params}}*/ element={<GymMenu/>}/>
+
+
           <Route path='/suggestion' element={<Suggestion/>}/>
           <Route path='/settings' element={<Settings/>}/>
           <Route path='/log-in' element={<LogIn/>}/>
           <Route path='/register' element={<Register/>}/>
+          <Route path='/profile-config' element={<ProfileConfig/>}/>
         </Routes>
+        <Overlay>
+          {dialogContext.dialog}
+        </Overlay>
     </div>
   );
 }

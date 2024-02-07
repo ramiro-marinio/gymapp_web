@@ -2,13 +2,15 @@ import React from 'react'
 import styles from './navbar.module.css';
 import NavigationLink from './navlink';
 import UserPlate from '../auth/components/userplate/userplate';
+import IconButton from '../icons/iconbutton';
 function NavBar() {
   return (
     <div className={styles.navbar}>
-      <NavigationLink title='Home Page' route='/' icon='home'/>
-      <NavigationLink title='My Gyms' route='/my-gyms' icon='exercise'/>
-      <NavigationLink title='Send a Suggestion' route='/suggestion' icon='lightbulb'/>
-      <NavigationLink title='Settings' route='/settings' icon='settings'/>
+      <label htmlFor='my-drawer-2'>
+      <IconButton icon={'menu'} enabled onPressed={()=>{
+
+      }}/>
+      </label>
       <UserPlate/>
     </div>
   )

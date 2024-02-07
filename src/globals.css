@@ -1,8 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body{
-    font-family: sans-serif;
+    font-weight: 400;
     margin: 0;
 }
 .material-symbols-outlined {
     font-style: italic;
     vertical-align: text-bottom;
+}
+input{
+    border-radius: 0;
+    border: none;
+    padding: 2px;
+}
+textarea{
+    padding: 2px;
+}
+textarea{
+    border-radius: 0;
+    border: none;
 }

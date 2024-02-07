@@ -1,0 +1,13 @@
+.bodyFieldDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.range{
+    width: 300px;
+}
+
+.singleline{
+    display: flex;
+    flex-direction: row;
+}

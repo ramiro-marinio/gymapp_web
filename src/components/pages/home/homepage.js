@@ -6,7 +6,6 @@ function HomePage(){
   const context = useContext(FirebaseContext);
   const [loading,setLoading] = useState(true);
   const [data,setData] = useState([]);
-  console.log('fuck');
   useEffect(()=>{
     if(loading){
       fetch('https://getlocalnews-e2zma6cdba-uc.a.run.app?language=en',).then((response)=>{
