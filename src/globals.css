@@ -10,14 +10,12 @@ body{
     vertical-align: text-bottom;
 }
 input{
-    border-radius: 0;
-    border: none;
     padding: 2px;
 }
 textarea{
-    padding: 2px;
+    resize: none;
 }
-textarea{
-    border-radius: 0;
-    border: none;
+
+.p{
+    white-space: pre-wrap;
 }

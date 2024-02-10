@@ -13,7 +13,6 @@ export default ({ children }) => {
   const [userData,setUserData] = useState(undefined);
   const[gyms,setGyms] = useState(undefined);
   onAuthStateChanged(auth,(user)=>{
-    console.log('shitfuck');
     setUser(user);
   })
   if(user){
@@ -31,14 +30,11 @@ export default ({ children }) => {
       const q = query(collection(db,'memberships'),where("userId","==",user.uid))
       unsubGyms = onSnapshot(q,async(documentSnapshot)=>{
         let result = Array(0);
-        console.log(typeof(result))
         for(let i=0;i<documentSnapshot.docs.length;i++){
           const data = (await getDoc(doc(db,'gyms',documentSnapshot.docs[i].data().gymId))).data();
-          console.log(data);
           result.push(GymData.fromJson(data));
         }
-        console.log(result)
-        setGyms(result)
+        setGyms(result);
       })
     }
   }

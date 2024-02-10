@@ -3,10 +3,12 @@ import PropTypes from 'prop-types'
 
 export function Icon(props) {
   return (
-    <span style={{userSelect:'none'}} className="material-symbols-outlined notranslate">{props.name}</span>
+    <span onClick={props.onPressed ?? null} style={{userSelect:'none'}} className={`material-symbols-outlined notranslate ${props.className}`}>{props.name}</span>
   )
 }
 
 Icon.propTypes = {
-  name:PropTypes.string
+  onPressed:PropTypes.func,
+  name:PropTypes.string,
+  className:PropTypes.string,
 }

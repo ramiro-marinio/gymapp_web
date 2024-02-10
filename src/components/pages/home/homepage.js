@@ -1,9 +1,9 @@
-import { React, useState, useEffect, useContext } from 'react';
+import { React, useState, useEffect } from 'react';
 import Article from './components/article';
-import { FirebaseContext } from '../../../firebase/context';
+import Loading from '../../general/loading';
 
 function HomePage(){
-  const context = useContext(FirebaseContext);
+  // const context = useContext(FirebaseContext);
   const [loading,setLoading] = useState(true);
   const [data,setData] = useState([]);
   useEffect(()=>{
@@ -15,9 +15,9 @@ function HomePage(){
         setData(data['data']);
       })
     }
-  },[]);
+  },[loading]);
   if(loading){
-    return <div>Loading da shit</div>
+    return <Loading/>
   }
   return (
     <div>

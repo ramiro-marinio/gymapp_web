@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext } from 'react'
 import CirleAvatar from '../../../../general/circleavatar';
 import IconButton from '../../../../icons/iconbutton';
 import noImage from '../../../../../assets/no_image.jpg';
@@ -12,7 +12,6 @@ import { DialogContext } from '../../../../general/dialog/dialogcontext';
 import Dialog from '../../../../general/dialog/dialog';
 import Button from '../../../../general/button';
 export default function PhotoPicker() {
-  const imageRef = useRef();
   const context = useContext(FirebaseContext);
   const dialogContext = useContext(DialogContext);
   return (
@@ -49,13 +48,12 @@ export default function PhotoPicker() {
               return;
             }
             const reference = ref(storage,'/profile-pics/' + context.user.uid);
-            console.log('shit nut cum jizz');
             uploadBytes(reference,e.target.files[0]).then((uploadResult)=>{
               getDownloadURL(uploadResult.ref).then((value)=>{
                 context.setUserData({photoURL:value});
                 updateProfile(context.user,{photoURL:value}).then((_)=>{
                   dialogContext.setDialog(
-                    <Dialog title={'Successfully Changed Profile Picture.'} actions={<Button title={'Ok'} blue={255} red={100} green={100} enabled onClick={()=>{dialogContext.setDialog(null)}}/>}/>
+                    <Dialog title={'Successfully Changed Profile Picture.'} actions={<Button title={'Ok'} blue={255} red={100} green={150} enabled onClick={()=>{dialogContext.setDialog(null)}}/>}/>
                   );
                 })
               })

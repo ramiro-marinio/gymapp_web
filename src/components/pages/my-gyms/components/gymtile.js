@@ -15,7 +15,7 @@ function GymTile(props) {
         <CirleAvatar radius={40} image={gymData.photoURL ?? noImageGym}/>
         <h3 className='text-3xl font-semibold'>{gymData.name}</h3>
         <IconButton icon={'login'} onPressed={()=>{
-            navigate(`/gym/${JSON.stringify(props.gymData.toJson())}`);
+            navigate(`/gym/${props.gymData.id}/info`);
         }}/>
         <div class="dropdown dropdown-end">
         <div tabIndex={0} role='button' className={`${buttonStyles.iconbutton} z-[1] btn btn-neutral btn-circle w-12`} ><Icon name={'more_vert'}/></div>

@@ -1,0 +1,11 @@
+
+@media screen, (max-width: 600px) {
+    /* Adjust font size for smaller screens */
+    .text {
+      font-size: 8vw;
+    }
+  }
+
+.text{
+    font-size: 1.25vw;
+}

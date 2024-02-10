@@ -5,7 +5,7 @@ function ErrorText({children}) {
     return  <></>
   }
   else{
-    return <p style={{color:'red',fontSize:12,margin:0}}>{children}</p>
+    return <p className='text-error'>{children}</p>
   }
 }
 

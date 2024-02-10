@@ -1,5 +1,6 @@
 export class GymData{
-    constructor(name,description,ownerId,photoName,photoURL){
+    constructor(id,name,description,ownerId,photoName,photoURL){
+        this.id = id;
         this.name = name;
         this.description = description;
         this.ownerId = ownerId;
@@ -7,15 +8,16 @@ export class GymData{
         this.photoURL = photoURL;
     }
     static fromJson(json){
-        return new GymData(json['name'],json['description'],json['ownerId'],json['photoName'],json['photoURL']);
+        return new GymData(json['id'],json['name'],json['description'],json['ownerId'],json['photoName'],json['photoURL']);
     }
     toJson(){
-        return {
+        return JSON.parse(JSON.stringify({
+            id:this.id,
             name:this.name,
             description:this.description,
             ownerId:this.ownerId,
             photoName:this.photoName,
             photoURL:this.photoURL,
-        }
+        }));
     }
 }

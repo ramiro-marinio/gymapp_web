@@ -1,0 +1,60 @@
+
+.fabWrapper{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+.floatingactionbutton{
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: deepskyblue;
+    transition: box-shadow 0.2s linear,transform 0.1s ease-out;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.41);
+    animation: shadowShrink 0.5s 1;
+    color: white;
+    width: 50px;
+    height: 50px;
+}
+.disabledFab{
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: deepskyblue;
+    cursor:wait;
+    filter:brightness(0.5);
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.41);
+    color: white;
+    width: 50px;
+    height: 50px;
+}
+@keyframes shadowGrow {
+    0%{
+        box-shadow: 0 0 10px rgba(0, 191, 255, 0.41);
+    }
+    100%{
+        box-shadow: 0 0 25px rgb(0, 191, 255);
+    }
+}
+@keyframes click{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0.9);
+    }
+}
+.floatingactionbutton:hover{
+    cursor: pointer;
+    /* animation: shadowGrow 0.5s 1; */
+    transition: box-shadow 0.2s linear,transform 0.1s ease-out;
+    box-shadow: 0 0 25px rgb(0, 191, 255);
+}
+
+.floatingactionbutton:active{
+    transform: scale(0.9);
+    transition: transform 0.1s ease-out;
+}
