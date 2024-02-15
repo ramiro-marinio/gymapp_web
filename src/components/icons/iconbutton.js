@@ -5,7 +5,7 @@ import styles from './iconbutton.module.css';
 function IconButton(props) {
   const enabled = props.enabled ?? true;
   return (
-    <div className={`${enabled ? styles.iconbutton : styles.disabledIconButton} btn btn-neutral btn-circle w-12`} onClick={enabled ? props.onPressed : null}> <Icon name={props.icon}/> </div>
+    <div className={`btn ${!enabled ? 'btn-disabled' : null} btn-neutral m-2 btn-circle w-12`} onClick={enabled ? props.onPressed : null}> <Icon name={props.icon}/> </div>
   )
 }
 

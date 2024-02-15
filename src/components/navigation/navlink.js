@@ -6,7 +6,7 @@ function NavigationLink(props) {
   const navigate = useNavigate();
   return (
     <label htmlFor='my-drawer-2'>
-      <div onClick={()=>{navigate(props.route)}} className={styles.navlink + ' rounded-md'}>
+      <div onClick={()=>{navigate(props.route)}} className={styles.navlink + ' rounded-md flex flex-row items-center w-full p-2'}>
         <div className={'mr-2'}>
           <Icon name={props.icon}/>
         </div>

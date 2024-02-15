@@ -11,9 +11,12 @@ import { UserData } from '../../models/userdata';
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../../../firebase/initialize_firebase';
+import { DialogContext } from '../../../general/dialog/dialogcontext';
+import Dialog from '../../../general/dialog/dialog';
 export function ProfileConfig() {
   const navigate = useNavigate();
   const context = useContext(FirebaseContext);
+  const dialogContext = useContext(DialogContext);
   const userData = context.userData;
   const [birthday,setBirthday] = useState(userData?.birthday);
   const [name,setName] = useState(userData?.displayName);
@@ -45,14 +48,29 @@ export function ProfileConfig() {
     </div>
   }
   return (
-    <div style={{width:"100%",display:"flex",justifyContent:"center",flexDirection:"row"}}>
-      <div className={styles.profileConfig}>
+    <div className='flex flex-col overflow-y-scroll h-full' style={{width:"100%",display:"flex",justifyContent:"center",flexDirection:"row"}}>
+      <div className={`${styles.profileConfig} flex flex-col overflow-y-visible h-fit`}>
         <h1>Profile Config</h1>
         <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
            <Button red={0} green={255} blue={0} enabled={changesMade} icon={'save'} onClick={()=>{
             context.setUserData(newUserData.toJson());
            }} title={'Save'}/>
-           <Button red={255} green={0} blue={0} enabled icon={'logout'} onClick={()=>{signOut(auth).then(()=>{navigate('/')})}} title={'Log Out'}/>
+           <Button red={255} green={0} blue={0} enabled icon={'logout'} onClick={()=>{
+            dialogContext.setDialog(
+              <Dialog
+              title={'Log Out?'}
+              actions={<>
+                <Button title={'No'} red={0} green={150} blue={255} enabled onClick={()=>{
+                  dialogContext.setDialog(null);
+                }}/>
+                <Button title={'Yes'} red={0} green={150} blue={255} enabled onClick={()=>{
+                  dialogContext.setDialog(null);
+                  signOut(auth).then(()=>{navigate('/')});
+                }}/>
+              </>}
+              />
+            )
+           }} title={'Log Out'}/>
         </div>
         <PhotoPicker/>
         <TextField maxLength={40} maxLines={1} title='Display Name' initialValue={name} onChangeValue={(value)=>{setName(value)}}/>
@@ -62,6 +80,7 @@ export function ProfileConfig() {
           setSex(value);
         }}/>
         <BirthdayField initialValue={new Date(userData.birthday).toISOString().split('T')[0]} onChangeDate={(milliseconds)=>{
+          alert(milliseconds);
           setBirthday(milliseconds);
         }}/>
         <TextField maxLength={5000} maxLines={6} title='Injuries' onChangeValue={(value)=>{setInjuries(value)}}/>

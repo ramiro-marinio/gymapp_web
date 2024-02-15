@@ -32,7 +32,7 @@ function ExerciseDemonstrations(props) {
     return <Loading/>
   }
   return (
-    <div>
+    <div className='h-full overflow-y-scroll'>
       <div className='flex flex-row justify-center items-center'>
         <h1 align='center' className='text-3xl m-4 font-bold'>
           Exercise Demonstrations

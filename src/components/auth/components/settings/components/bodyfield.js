@@ -8,12 +8,12 @@ function BodyField(props) {
         <div className={styles.bodyFieldDiv}>
             <div className={styles.singleline}>
                 <p>Stature:</p>
-                <input type='range' value={stature} max={230} min={100} onChange={(value)=>{props.onChangeStature(parseInt(value.target.value));setStature(value.target.value)}} className={styles.range}/>
+                <input type='range' value={stature} max={230} min={100} onChange={(value)=>{props.onChangeStature(parseInt(value.target.value));setStature(value.target.value)}} className='ml-1 range range-xs w-80'/>
                 <p>{stature} cm.</p>
             </div>
             <div className={styles.singleline}>
                 <p>Weight:</p>
-                <input type='range' value={weight} max={200} min={35} onChange={(value)=>{props.onChangeWeight(parseInt(value.target.value));setWeight(value.target.value)}} className={styles.range}/>
+                <input type='range' value={weight} max={200} min={35} onChange={(value)=>{props.onChangeWeight(parseInt(value.target.value));setWeight(value.target.value)}} className='ml-1 range range-xs w-80'/>
                 <p>{weight} kg.</p>
             </div>
         </div>

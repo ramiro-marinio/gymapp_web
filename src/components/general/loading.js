@@ -3,7 +3,7 @@ import React from 'react'
 function Loading() {
   return (
     <div className='flex flex-col m-10 items-center'>
-        <p>Loading...</p>
+        <span class="loading loading-spinner loading-lg"></span>
     </div>
   )
 }

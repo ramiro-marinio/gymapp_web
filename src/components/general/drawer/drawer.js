@@ -2,7 +2,7 @@ import React from 'react'
 import NavigationLink from '../../navigation/navlink'
 function Drawer() {
   return (
-    <div class="drawer sticky z-10">
+    <div class="drawer fixed z-10">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle"/>
     {/* <div class="drawer-content flex flex-col items-center justify-center">
         <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>

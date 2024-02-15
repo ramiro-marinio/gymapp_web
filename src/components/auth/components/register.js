@@ -36,7 +36,7 @@ function Register() {
                         return 'Invalid Email.';
                     }
                     return true;
-                }})} type='text' placeholder='Email' className={styles.field}/>
+                }})} type='text' placeholder='Email' className='input input-bordered w-80 m-1'/>
 
                 <ErrorText>{formState.errors.email?.message}</ErrorText>
 
@@ -45,7 +45,7 @@ function Register() {
                         return 'Password must be at least 8 characters long.'
                     }
                     return true;
-                }})} type='password' placeholder='Password' className={styles.field}/>
+                }})} type='password' placeholder='Password' className='input input-bordered w-80 m-1'/>
 
                 <ErrorText>{formState.errors.password?.message}</ErrorText>
 
@@ -54,22 +54,24 @@ function Register() {
                         return 'The password does not match.'
                     }
                     return true;
-                }})} type='password' placeholder='Confirm Password' className={styles.field}/>
+                }})} type='password' placeholder='Confirm Password' className='input input-bordered w-80 m-1'/>
 
                 <ErrorText>{formState.errors.confirmPassword?.message}</ErrorText>
 
-                <input type='submit' value='Sign Up' className={styles.submit}/>
-                <Link to={'/log-in'}>Already have an account? Log in</Link>
+                <input type='submit' value='Sign Up' className='btn btn-neutral'/>
+                <Link to={'/log-in'} className='text-blue-400'>Already have an account? Log in</Link>
             </div>
-            <h2 align='center'>Or...</h2>
-            <GoogleOption onClick={async()=>{
-                try{
-                    await signInWithPopup(auth,new GoogleAuthProvider());
-                }
-                catch (e){
-                    console.log(e);
-                }
-            }}/>
+            <h2 align='center' className='text-3xl font-bold m-3'>Or...</h2>
+            <div className='flex flex-row items-center justify-center'>
+                <GoogleOption onClick={async()=>{
+                    try{
+                        await signInWithPopup(auth,new GoogleAuthProvider());
+                    }
+                    catch (e){
+                        console.log(e);
+                    }
+                }}/>
+            </div>
         </form>
     </div>
   )

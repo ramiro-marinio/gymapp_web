@@ -16,14 +16,14 @@ export default ({ children }) => {
     setUser(user);
   })
   if(user){
-    getDoc(doc(db,'userData',user.uid)).then((documentSnapshot)=>{
-      if(!documentSnapshot.data()){
-        setDoc(doc(db,'userData',user.uid),new UserData(Date.now(),'New User','At The Gym.','', user.photoURL,true,false,175,user.uid,70).toJson())
-      }
-    })
     if(!unsubUserData){
-      unsubUserData = onSnapshot(doc(db,'/userData',user.uid),(snapshot)=>{
-        setUserData(UserData.fromJson(snapshot.data()));
+      unsubUserData = onSnapshot(doc(db,'userData',user.uid),async(snapshot)=>{
+        if(!snapshot.data()){
+          await setDoc(doc(db,'userData',user.uid),new UserData(Date.now(),'New User','At The Gym.','', user.photoURL,true,false,175,user.uid,70).toJson())
+        }
+        else{
+          setUserData(UserData.fromJson(snapshot.data()));
+        }
       });
     }
     if(!unsubGyms){

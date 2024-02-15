@@ -4,8 +4,8 @@ import styles from './button.module.css'
 import { Icon } from '../icons/icon'
 function Button(props) {
   const [mouseOver,setMouseOver] = useState(false);
-  const red = props.red ?? 255;
-  const green = props.green ?? 255;
+  const red = props.red ?? 0;
+  const green = props.green ?? 150;
   const blue = props.blue ?? 255;
   return (
     <div style={{

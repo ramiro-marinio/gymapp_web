@@ -20,11 +20,11 @@ function LogIn() {
                     });
                 })}>
                     <div className={styles.credentials}>
-                        <input {...register('userName')} type='text' placeholder='User Name' className={styles.field}/>
-                        <input {...register('password')} type='password' placeholder='Password' className={styles.field}/>
-                        <input type='submit' value='Log In' className={styles.submit}/>
-                        <Link to={'/register'}>Don't have an account? Sign Up</Link>
-                        <h2 align='center'>Or...</h2>
+                        <input {...register('userName')} type='text' placeholder='User Name' className='input m-1 input-bordered'/>
+                        <input {...register('password')} type='password' placeholder='Password' className='input m-1 input-bordered'/>
+                        <input type='submit' className='btn btn-neutral' value='Log In'/>
+                        <Link to={'/register'} className='text-blue-400'>Don't have an account? Sign Up</Link>
+                        <h2 align='center' className='text-3xl m-5 font-bold'>Or...</h2>
                         <GoogleOption onClick={async()=>{
                             try{
                                 await signInWithPopup(auth,new GoogleAuthProvider());

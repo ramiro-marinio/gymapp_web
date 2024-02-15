@@ -13,29 +13,39 @@ import Overlay from "./components/general/dialog/overlay";
 import { DialogContext } from "./components/general/dialog/dialogcontext";
 import Drawer from "./components/general/drawer/drawer";
 import GymMenu from "./components/pages/my-gyms/components/gym/gymmenu";
+import JoinGym from "./components/pages/my-gyms/components/gym/pages/joingym";
+import CreateGym from "./components/pages/my-gyms/components/gym/pages/creategym/creategym";
 function App() {
   const dialogContext = useContext(DialogContext);
   return (
-    <div className="App">
+    <>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
       <Drawer/>
-      <NavBar/>
-      <Routes>
-          <Route path='/' element={<HomePage/>}/>
+      <Overlay>
+            {dialogContext.dialog}
+      </Overlay>
+      <div className="flex flex-col h-[100vh]">
+        <div>
+          <NavBar/>
+        </div>
+        <div className="flex-grow overflow-hidden">
+          <Routes>
+              <Route path='/' element={<HomePage/>}/>
 
-          <Route path='/my-gyms' element={<MyGyms/>}/>
-          <Route path='/gym/:gym/*' /*loader={({params})=>{return params}}*/ element={<GymMenu/>}/>
+              <Route path='/my-gyms' element={<MyGyms/>}/>
+              <Route path='/join-gym' element={<JoinGym/>}/>
+              <Route path='/create-gym' element={<CreateGym/>}/>
+              <Route path='/gym/:gym/*' /*loader={({params})=>{return params}}*/ element={<GymMenu/>}/>
 
-          <Route path='/suggestion' element={<Suggestion/>}/>
-          <Route path='/settings' element={<Settings/>}/>
-          <Route path='/log-in' element={<LogIn/>}/>
-          <Route path='/register' element={<Register/>}/>
-          <Route path='/profile-config' element={<ProfileConfig/>}/>
-        </Routes>
-        <Overlay>
-          {dialogContext.dialog}
-        </Overlay>
-    </div>
+              <Route path='/suggestion' element={<Suggestion/>}/>
+              <Route path='/settings' element={<Settings/>}/>
+              <Route path='/log-in' element={<LogIn/>}/>
+              <Route path='/register' element={<Register/>}/>
+              <Route path='/profile-config' element={<ProfileConfig/>}/>
+            </Routes>
+        </div>
+      </div>
+    </>
   );
 }
 

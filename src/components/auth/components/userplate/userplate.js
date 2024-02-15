@@ -2,11 +2,8 @@ import React, { useContext } from 'react'
 import styles from './userplate.module.css';
 import CirleAvatar from '../../../general/circleavatar';
 import noProfilePic from '../../../../assets/no_image.jpg';
-import { auth } from '../../../../firebase/initialize_firebase';
 import { useNavigate } from 'react-router-dom';
 import {FirebaseContext} from '../../../../firebase/context';
-import { signOut } from 'firebase/auth';
-import { UserData } from '../../models/userdata';
 function UserPlate() {
   const navigate = useNavigate();
   const firebaseContext = useContext(FirebaseContext);

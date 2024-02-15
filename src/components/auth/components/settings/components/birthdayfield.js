@@ -6,9 +6,9 @@ function BirthdayField(props) {
   return (
     <div className={styles.birthdayField}>
         <h3 className={styles.noMargin}>Birthday</h3>
-        <input type='date' value={date} onChange={(e)=>{
+        <input type='date' className='input input-bordered' value={date} onChange={(e)=>{
             setDate(e.target.value);
-            props.onChangeDate(e.target.valueAsDate.getMilliseconds())
+            props.onChangeDate(e.target.valueAsDate.getTime())
         }}/>
     </div>
     

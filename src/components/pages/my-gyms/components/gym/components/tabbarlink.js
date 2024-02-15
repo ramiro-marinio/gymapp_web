@@ -7,8 +7,8 @@ function TabbarLink(props) {
   return (
         <div onClick={()=>{
             navigate(props.to);
-        }} className='bg-neutral flex flex-row justify-center items-center flex-grow m-0 rounded-none select-none flex-1 hover:cursor-pointer hover:brightness-75 active:brightness-125'>
-            <p align='center' className='text-l l:text-sm'>{props.title}</p>
+        }} className='bg-neutral h-8 flex flex-row justify-center items-center flex-grow m-0 rounded-md select-none flex-1 hover:cursor-pointer hover:brightness-75 active:brightness-125'>
+            <p align='center' className='text-l l:text-md'>{props.title}</p>
         </div>
   )
 }

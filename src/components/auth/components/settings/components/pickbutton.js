@@ -7,7 +7,7 @@ function PickButton(props) {
   const context = useContext(FirebaseContext);
   return (
     <div>
-        <input type='file' id='file' onChange={props.onSelect} accept='image/*' />
+        <input {...props.register ? props.registerFunc(props.register) : null} type='file' id='file' onChange={props.onSelect} accept='image/*' />
         <label className={styles.fileLabel} htmlFor='file'>
             <Icon name='add_a_photo'/>
             <p className={styles.label}>Pick an Image</p>

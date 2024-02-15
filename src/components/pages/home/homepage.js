@@ -20,7 +20,7 @@ function HomePage(){
     return <Loading/>
   }
   return (
-    <div>
+    <div className='h-full overflow-y-scroll'>
       <h1 align="center">Welcome to TrainGuru</h1>
       {data.map((article)=>{
         return <Article key={Math.random().toString()} article={article}/>
